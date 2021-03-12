@@ -62,7 +62,7 @@ class TestSmsConnect(TestCase):
 
     def test_inbox(self):
         sc = SmsConnect(login=settings.SMS_CONNECT_LOGIN, password=settings.SMS_CONNECT_PASSWORD, secure=True)
-        print sc.inbox()
+        print(sc.inbox())
 #        print sc.inbox(delete=True)
 
 

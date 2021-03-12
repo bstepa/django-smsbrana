@@ -3,8 +3,8 @@ import datetime
 import random
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.utils.encoding import python_2_unicode_compatible
 from django_extensions.db.fields import CreationDateTimeField
+from six import python_2_unicode_compatible
 
 
 @python_2_unicode_compatible

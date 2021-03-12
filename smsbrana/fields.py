@@ -3,7 +3,7 @@ import re
 
 from django.core.exceptions import ValidationError
 from django.core import validators
-from django.utils.encoding import smart_unicode
+from django.utils.encoding import smart_text
 from django.forms.fields import CharField
 from django.utils.translation import ugettext as _
 
@@ -27,7 +27,7 @@ class PhoneNumberField(CharField):
         if value in validators.EMPTY_VALUES and not self.required:
             return
 
-        value = re.sub(r'\s', '', smart_unicode(value))
+        value = re.sub(r'\s', '', smart_text(value))
         m = self.phone_re.search(value)
         if m:
             international = m.group(1) or '+420'
